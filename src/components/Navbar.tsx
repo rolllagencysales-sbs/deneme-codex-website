@@ -30,7 +30,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 py-2 md:py-3 flex items-center justify-between">
         <a href="#hero">
-          <img src={logo} alt="Rolll Agency" className="h-16 md:h-20 w-auto" />
+          <img src={logo} alt="Rolll Agency" className="h-32 md:h-40 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-8">
