@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 213 39% 10%;
+    --foreground: 0 0% 90%;
+
+    --card: 213 39% 13%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 213 39% 13%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 38 96% 49%;
+    --primary-foreground: 213 39% 10%;
+
+    --secondary: 213 39% 16%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 213 20% 18%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 38 96% 49%;
+    --accent-foreground: 213 39% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 213 20% 20%;
+    --input: 213 20% 20%;
+    --ring: 38 96% 49%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 213 39% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 38 96% 49%;
+    --sidebar-primary-foreground: 213 39% 10%;
+    --sidebar-accent: 213 39% 16%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 213 20% 20%;
+    --sidebar-ring: 38 96% 49%;
+
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --gradient-hero: linear-gradient(135deg, hsl(213 39% 10%) 0%, hsl(213 39% 6%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(38 96% 49%) 0%, hsl(30 96% 45%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(213 39% 14%) 0%, hsl(213 39% 10%) 100%);
+    --shadow-glow: 0 0 40px hsl(38 96% 49% / 0.15);
+    --shadow-card: 0 10px 40px hsl(213 39% 4% / 0.5);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-left {
+    animation: slideLeft 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-slide-right {
+    animation: slideRight 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+  .stagger-6 { animation-delay: 0.6s; }
+
+  .reveal {
+    opacity: 0;
+    animation-play-state: paused;
+  }
+
+  .reveal.animate-visible {
+    animation-play-state: running;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(38 96% 49% / 0.2); }
+  50% { box-shadow: 0 0 40px hsl(38 96% 49% / 0.4); }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(213 39% 8%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(38 96% 49% / 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(38 96% 49% / 0.6);
+}
