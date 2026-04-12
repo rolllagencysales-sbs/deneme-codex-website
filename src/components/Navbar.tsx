@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
@@ -13,10 +13,11 @@ const Navbar = () => {
 
   const links = [
     { label: "Ana Sayfa", href: "#hero" },
-    { label: "Hakkımızda", href: "#about" },
+    { label: "HakkÄ±mÄ±zda", href: "#about" },
     { label: "Hizmetler", href: "#services" },
+    { label: "AI Asistan", href: "#ai-assistant" },
     { label: "Misyon", href: "#mission" },
-    { label: "İletişim", href: "#contact" },
+    { label: "Ä°letiÅŸim", href: "#contact" },
   ];
 
   return (
@@ -49,7 +50,7 @@ const Navbar = () => {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Menü"
+          aria-label="MenÃ¼"
         >
           <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
           <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
@@ -79,3 +80,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
