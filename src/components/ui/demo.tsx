@@ -73,13 +73,7 @@ const sendToWebhook = async (userMessage: string): Promise<string> => {
 };
 
 function DemoAiAssistatBasic() {
-  return (
-    <AiAssistat
-      title="Rolll AI Assistant"
-      description="Sorularini yaz, asistanimiz aninda yanitlasin. Sonraki adimda webhook ile gercek AI baglantisi yapacagiz."
-      onSendMessage={sendToWebhook}
-    />
-  );
+  return <AiAssistat onSendMessage={sendToWebhook} />;
 }
 
 export { DemoAiAssistatBasic };

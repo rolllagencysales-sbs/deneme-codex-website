@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -46,7 +46,7 @@
     --sidebar-ring: 38 96% 49%;
 
     --font-heading: 'Playfair Display', serif;
-    --font-body: 'Open Sans', sans-serif;
+    --font-body: 'Roboto', sans-serif;
 
     --gradient-hero: linear-gradient(135deg, hsl(213 39% 10%) 0%, hsl(213 39% 6%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(38 96% 49%) 0%, hsl(30 96% 45%) 100%);

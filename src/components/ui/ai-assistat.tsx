@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { Loader2, Send, Sparkles, X } from "lucide-react";
+import { Loader2, Send, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type ChatMessage = {
@@ -8,8 +8,6 @@ type ChatMessage = {
 };
 
 type AiAssistatProps = {
-  title?: string;
-  description?: string;
   placeholder?: string;
   className?: string;
   onSendMessage?: (userMessage: string, history: ChatMessage[]) => Promise<string> | string;
@@ -38,8 +36,6 @@ const fallbackResponse = (userMessage: string) => {
 };
 
 const AiAssistat = ({
-  title = "Smart AI Assistant",
-  description = "Interact with an intelligent assistant that understands your queries and provides instant responses.",
   placeholder = "Mesajini yaz...",
   className,
   onSendMessage,
@@ -90,11 +86,6 @@ const AiAssistat = ({
     }
   };
 
-  const clearChat = () => {
-    if (isTyping) return;
-    setMessages([]);
-  };
-
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isTyping]);
@@ -102,40 +93,18 @@ const AiAssistat = ({
   return (
     <div
       className={cn(
-        "w-full max-w-xl mx-auto h-[560px] md:h-[600px] rounded-2xl overflow-hidden",
+        "w-full max-w-xl mx-auto h-[560px] md:h-[600px] rounded-2xl overflow-hidden flex flex-col",
         "border border-primary/25 shadow-[var(--shadow-card)]",
         "bg-gradient-to-br from-background via-secondary/80 to-background",
         className,
       )}
     >
-      <div className="bg-primary/15 backdrop-blur-sm p-4 border-b border-primary/25 flex justify-between items-center">
-        <div className="flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-primary" />
-          <div>
-            <h2 className="text-foreground font-semibold text-sm md:text-base">{title}</h2>
-            <p className="text-foreground/60 text-xs md:text-sm">{description}</p>
-          </div>
-        </div>
-        <button
-          type="button"
-          onClick={clearChat}
-          className="text-foreground/60 hover:text-primary transition-colors disabled:opacity-40"
-          aria-label="Sohbeti temizle"
-          disabled={messages.length === 0 || isTyping}
-        >
-          <X className="h-4 w-4" />
-        </button>
-      </div>
-
-      <div className="p-4 h-[calc(100%-150px)] overflow-y-auto bg-background/60">
+      <div className="p-4 flex-1 overflow-y-auto bg-background/60">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-4">
             <Sparkles className="h-11 w-11 text-primary mb-4" />
             <h3 className="text-foreground text-xl mb-2">Rolll AI asistanina hos geldin</h3>
-            <p className="text-foreground/60 text-sm max-w-sm">
-              Hedefin, hizmetin veya web projenle ilgili bir soru sor. Burayi webhook ile
-              gercek zamanli AI yanitlarina baglayacagiz.
-            </p>
+            <p className="text-foreground/60 text-sm max-w-sm">Hedefin, hizmetin veya web projenle ilgili bir soru sor.</p>
           </div>
         ) : (
           <div className="space-y-4">
