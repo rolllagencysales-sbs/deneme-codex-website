@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
@@ -13,11 +13,11 @@ const Navbar = () => {
 
   const links = [
     { label: "Ana Sayfa", href: "#hero" },
-    { label: "HakkÄ±mÄ±zda", href: "#about" },
+    { label: "Hakkımızda", href: "#about" },
     { label: "Hizmetler", href: "#services" },
     { label: "AI Asistan", href: "#ai-assistant" },
     { label: "Misyon", href: "#mission" },
-    { label: "Ä°letiÅŸim", href: "#contact" },
+    { label: "İletişim", href: "#contact" },
   ];
 
   return (
@@ -33,7 +33,6 @@ const Navbar = () => {
           <img src={logo} alt="Rolll Agency" className="h-10" />
         </a>
 
-        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
@@ -46,19 +45,29 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="MenÃ¼"
+          aria-label="Menü"
         >
-          <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
-          <span className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${
+              menuOpen ? "rotate-45 translate-y-2" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${
+              menuOpen ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block w-6 h-0.5 bg-foreground transition-all duration-300 ${
+              menuOpen ? "-rotate-45 -translate-y-2" : ""
+            }`}
+          />
         </button>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden bg-background/98 backdrop-blur-xl border-t border-border">
           <div className="flex flex-col px-6 py-4 gap-4">
@@ -80,4 +89,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

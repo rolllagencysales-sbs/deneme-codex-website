@@ -21,7 +21,10 @@ const MissionSection = () => {
               Başarıyı <span className="text-gradient">Büyütürüz</span>
             </h2>
             <p className="reveal animate-fade-up stagger-2 font-body text-foreground/60 leading-relaxed mb-6">
-              Rolll Agency olarak amacımız, firmaların mevcut sorunlarını hızlı ve etkili bir şekilde çözerek iş süreçlerini sorunsuz hâle getirmektir. Misyonumuz, sadece hizmet sunmak değil; firmaların büyümesine destek olan güvenilir ve stratejik çözümler üretmektir.
+              Rolll Agency olarak amacımız, firmaların mevcut sorunlarını hızlı ve etkili bir
+              şekilde çözerek iş süreçlerini sorunsuz hâle getirmektir. Misyonumuz, sadece hizmet
+              sunmak değil; firmaların büyümesine destek olan güvenilir ve stratejik çözümler
+              üretmektir.
             </p>
             <p className="reveal animate-fade-up stagger-3 font-body text-foreground/50 leading-relaxed italic border-l-2 border-primary pl-4">
               "Başarıyı büyütürüz, markayı sıfırdan kurarız."
@@ -36,7 +39,10 @@ const MissionSection = () => {
                 style={{ background: "var(--gradient-card)" }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-primary-foreground font-heading font-bold text-sm" style={{ background: "var(--gradient-accent)" }}>
+                  <div
+                    className="w-10 h-10 rounded-lg flex-shrink-0 flex items-center justify-center text-primary-foreground font-heading font-bold text-sm"
+                    style={{ background: "var(--gradient-accent)" }}
+                  >
                     {String(i + 1).padStart(2, "0")}
                   </div>
                   <div>

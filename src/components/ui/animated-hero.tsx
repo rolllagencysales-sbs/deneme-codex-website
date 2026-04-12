@@ -1,13 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 function AnimatedHero() {
   const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
-    () => ["yaratıcı", "yenilikçi", "etkileyici", "stratejik", "güçlü"],
-    []
-  );
+  const titles = useMemo(() => ["yaratıcı", "yenilikçi", "etkileyici", "stratejik", "güçlü"], []);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -54,7 +51,7 @@ function AnimatedHero() {
                       >
                         {title}
                       </motion.span>
-                    ) : null
+                    ) : null,
                   )}
                 </AnimatePresence>
               </span>
@@ -62,9 +59,8 @@ function AnimatedHero() {
             </h1>
 
             <p className="text-lg md:text-xl leading-relaxed tracking-tight text-foreground/60 max-w-2xl text-center font-body">
-              2026 yılında Bursa'da kurulan Rolll Agency, markaların dijital
-              dünyada güçlü ve etkileyici bir kimliğe sahip olmasını sağlayan
-              yaratıcı bir ajanstır.
+              2026 yılında Bursa&apos;da kurulan Rolll Agency, markaların dijital dünyada güçlü ve
+              etkileyici bir kimliğe sahip olmasını sağlayan yaratıcı bir ajanstır.
             </p>
           </div>
           <div className="flex flex-row gap-3">
