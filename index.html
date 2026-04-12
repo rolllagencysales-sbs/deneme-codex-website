@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Roll Agency için SEO, hosting, domain, marka kimliği ve yüksek etkili web tasarımı hizmetlerini tanıtan modern ajans sitesi.">
+    <title>Roll Agency | Web Tasarım, Marka Kimliği ve Dijital Altyapı</title>
+    <link rel="icon" type="image/png" href="roll-logo.png">
+    <link rel="shortcut icon" href="roll-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-mark">ROLL AGENCY</div>
+        <div class="loader-bar"><span></span></div>
+    </div>
+
+    <div class="noise-layer" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="#top" aria-label="Roll Agency ana sayfa">
+                <img src="roll-logo.png" alt="Roll Agency logosu" class="brand-logo">
+            </a>
+
+            <div class="nav-links">
+                <a href="#hizmetler">Hizmetler</a>
+                <a href="#surec">Süreç</a>
+                <a href="#blog">Blog</a>
+                <a href="#kvkk">KVKK</a>
+                <a href="#iletisim" class="button button--ghost magnetic">Teklif Al</a>
+            </div>
+
+            <a href="#iletisim" class="button button--ghost nav-mobile-cta magnetic">İletişim</a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero section">
+            <div class="hero-orb hero-orb--one" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb--two" aria-hidden="true"></div>
+            <div class="hero-grid container">
+                <div class="hero-copy">
+                    <p class="eyebrow reveal-item">Yüksek algı, net mesaj, güçlü dijital kurgu</p>
+                    <h1 class="hero-title split-target reveal-item">Markanızın dijital vitrini için dikkat çekici ve güven veren deneyimler tasarlıyoruz.</h1>
+                    <p class="hero-text reveal-item">
+                        Roll Agency; web sitesi tasarımı, marka kimliği, SEO temeli, domain planlaması ve hosting altyapısını
+                        tek çatı altında kurgulayan yaratıcı bir stüdyodur. Hedefimiz sadece güzel görünen bir site değil,
+                        ilk bakışta güven veren ve dönüşüm üreten bir dijital sistem kurmaktır.
+                    </p>
+
+                    <div class="hero-actions reveal-item">
+                        <a href="#iletisim" class="button button--solid magnetic">info@rolllagency.sbs</a>
+                        <a href="#blog" class="button button--outline magnetic">Blog Yazılarını İncele</a>
+                    </div>
+
+                    <div class="hero-highlights">
+                        <article class="mini-panel reveal-item">
+                            <span>Uzmanlık</span>
+                            <strong>Web, Marka, Altyapı</strong>
+                            <p>Görsel kalite ile teknik doğruluğu birlikte kurgularız.</p>
+                        </article>
+                        <article class="mini-panel reveal-item">
+                            <span>Yaklaşım</span>
+                            <strong>Strateji + Tasarım</strong>
+                            <p>Her sayfa, hedef kitlenin algısına göre biçimlendirilir.</p>
+                        </article>
+                        <article class="mini-panel reveal-item">
+                            <span>İletişim</span>
+                            <strong>@rolllagency</strong>
+                            <p>Hızlı teklif, planlama ve proje süreci için doğrudan ulaşın.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="hero-stage reveal-item">
+                    <div class="stage-window">
+                        <div class="stage-topline">
+                            <span>Marka Sunumu</span>
+                            <span>2026 Dijital Kimlik Sistemi</span>
+                        </div>
+                        <div class="stage-content">
+                            <p class="stage-badge">Dijital Tasarım Stüdyosu</p>
+                            <h2>Kurumsal görünüm, hızlı altyapı ve içerik stratejisi aynı sahnede.</h2>
+                            <p>
+                                Hazırladığımız yeni yapı, büyük tipografi, hareketli sahneler, çok katmanlı arka planlar
+                                ve dikkat odaklı içerik blokları ile markayı premium bir seviyede gösterir.
+                            </p>
+                        </div>
+                        <div class="stage-metrics">
+                            <div class="metric-box">
+                                <span>Kurulan Sistem</span>
+                                <strong class="counter" data-counter="48" data-suffix="+">0</strong>
+                            </div>
+                            <div class="metric-box">
+                                <span>Etkileşim Artışı</span>
+                                <strong class="counter" data-counter="312" data-suffix="%">0</strong>
+                            </div>
+                            <div class="metric-box">
+                                <span>Hazırlık Süresi</span>
+                                <strong class="counter" data-counter="7" data-suffix=" gün">0</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stage-float float-card float-card--one drift-card" data-zone="0.04,0.56,0.42,0.28" data-start="0.05,0.70">
+                        <strong>SEO - Hosting - Domain</strong>
+                    </div>
+                    <div class="stage-float float-card float-card--two drift-card" data-zone="0.52,0.18,0.34,0.40" data-start="0.64,0.40">
+                        <strong>Premium ve Akılda Kalıcı</strong>
+                    </div>
+                    <div class="stage-chip stage-chip--one">Kurumsal Kimlik</div>
+                </div>
+            </div>
+
+            <div class="hero-marquee">
+                <div class="marquee-track">
+                    <span>SEO Temeli</span>
+                    <span>Kurumsal Web Tasarımı</span>
+                    <span>Hosting Danışmanlığı</span>
+                    <span>Domain Planlaması</span>
+                    <span>Marka Kimliği</span>
+                    <span>Sosyal Medya Görsel Sistemi</span>
+                    <span>SEO Temeli</span>
+                    <span>Kurumsal Web Tasarımı</span>
+                    <span>Hosting Danışmanlığı</span>
+                    <span>Domain Planlaması</span>
+                    <span>Marka Kimliği</span>
+                    <span>Sosyal Medya Görsel Sistemi</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section intro-strip">
+            <div class="container intro-grid">
+                <div class="intro-card reveal-item tilt-card">
+                    <p class="eyebrow">Neden bu kadar önemli?</p>
+                    <h2 class="section-title">İlk izlenim çoğu zaman birkaç saniye içinde oluşur.</h2>
+                </div>
+                <div class="intro-copy reveal-item">
+                    <p>
+                        Bir ziyaretçi sitenize geldiğinde yalnızca tasarımı görmez; hızınızı, güven hissinizi, içerik netliğinizi
+                        ve markanızın ne kadar profesyonel durduğunu aynı anda algılar. Bu yüzden web sitesi, SEO temeli,
+                        domain seçimi ve marka kimliği birbirinden ayrı değil; aynı bütünün parçalarıdır.
+                    </p>
+                    <p>
+                        Hazırladığımız bu yeni site yapısı, referans çalışmanın sade iskeletini daha büyük, daha güçlü ve daha detaylı
+                        bir deneyime dönüştürür. Her bölüm kullanıcıyı bir sonraki adıma taşımak üzere tasarlanmıştır.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="hizmetler" class="section services">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow reveal-item">Hizmetler</p>
+                        <h2 class="section-title reveal-item">Markanızın dijital gücünü büyüten uçtan uca hizmetler.</h2>
+                    </div>
+                    <p class="section-text reveal-item">
+                        Verdiğin renk paletiyle uyumlu, kurumsal ama dikkat çekici bir görsel dil kurdum. İçerik tarafında ise
+                        marka sunumu, teknik altyapı ve blog anlatısını tek sayfada birleştirdim.
+                    </p>
+                </div>
+
+                <div class="service-grid service-grid--large">
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">01</div>
+                        <h3>Web Sitesi Tasarımı</h3>
+                        <p>Kurumsal, estetik ve kullanıcı akışını net biçimde yöneten özel tasarım web siteleri oluşturuyoruz.</p>
+                        <ul>
+                            <li>Büyük tipografi ve güçlü ilk ekran</li>
+                            <li>Mobil uyumlu ve hız odaklı düzen</li>
+                            <li>Kurumsal görünüm ile güven algısı</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">02</div>
+                        <h3>SEO Temeli ve İçerik Kurgusu</h3>
+                        <p>Site yapısını arama motorlarına uygun hale getirerek görünürlük için doğru başlangıcı sağlıyoruz.</p>
+                        <ul>
+                            <li>Başlık, açıklama ve içerik düzeni</li>
+                            <li>Teknik iskelet ve okunabilir yapı</li>
+                            <li>Blog planlaması ve konu haritası</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">03</div>
+                        <h3>Hosting Altyapısı</h3>
+                        <p>Hızlı açılan, güvenli ve sürdürülebilir bir yayın altyapısı için doğru hosting yaklaşımını kuruyoruz.</p>
+                        <ul>
+                            <li>Sunucu performans analizi</li>
+                            <li>Yedekleme ve temel güvenlik yaklaşımı</li>
+                            <li>Bakım ve yayın sürekliliği planı</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">04</div>
+                        <h3>Domain ve Kurumsal Konumlandırma</h3>
+                        <p>Markanın akılda kalıcılığına ve güvenilirliğine uygun domain kurgusu oluşturuyoruz.</p>
+                        <ul>
+                            <li>Doğru uzantı ve isim stratejisi</li>
+                            <li>Alan adı yönlendirme ve kurulum</li>
+                            <li>Marka bütünlüğüne uygun dijital görünüm</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">05</div>
+                        <h3>Marka Kimliği Tasarımı</h3>
+                        <p>Logo, renk, tipografi ve iletişim tonu gibi tüm unsurları tek bir tutarlı dilde topluyoruz.</p>
+                        <ul>
+                            <li>Logo ve renk sistemi</li>
+                            <li>Tipografi ve görsel yön</li>
+                            <li>Dijital mecralarda tutarlı görünüm</li>
+                        </ul>
+                    </article>
+
+                    <article class="service-card reveal-item tilt-card">
+                        <div class="service-index">06</div>
+                        <h3>Motion ve Sosyal Medya Görselleri</h3>
+                        <p>Markayı durağan olmaktan çıkarıp daha canlı, daha dikkat çekici ve daha modern bir kimliğe taşırız.</p>
+                        <ul>
+                            <li>Animasyonlu tanıtım kurguları</li>
+                            <li>Reels ve kısa video tasarım dili</li>
+                            <li>Sosyal medya içerik sistemi</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section advantage">
+            <div class="container advantage-grid">
+                <div class="advantage-panel reveal-item">
+                    <p class="eyebrow">Ajans bakışı</p>
+                    <h2 class="section-title">Tasarımı yalnızca güzel görünmesi için değil, doğru mesajı vermesi için kuruyoruz.</h2>
+                    <p class="section-text">
+                        Bir web sitesinin güçlü olması, yalnızca görsel estetiğe bağlı değildir. Ziyaretçinin ne göreceği,
+                        ne hissedeceği ve hangi adıma yöneleceği de tasarımın parçasıdır. Bu nedenle içerik hiyerarşisini,
+                        hareket dilini ve çağrı butonlarını aynı sistem içinde planlıyoruz.
+                    </p>
+                </div>
+
+                <div class="advantage-stack">
+                    <article class="stack-card reveal-item tilt-card">
+                        <strong>Güçlü İlk Ekran</strong>
+                        <p>Ziyaretçiye saniyeler içinde profesyonellik ve güven hissi verir.</p>
+                    </article>
+                    <article class="stack-card reveal-item tilt-card">
+                        <strong>Teknik Netlik</strong>
+                        <p>Domain, hosting ve içerik yapısı anlaşılır biçimde konumlandırılır.</p>
+                    </article>
+                    <article class="stack-card reveal-item tilt-card">
+                        <strong>Uzun Vadeli Kullanım</strong>
+                        <p>Kolay güncellenen, büyüyebilen ve blog eklenebilen bir yapı sunar.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="surec" class="section workflow">
+            <div class="container workflow-grid">
+                <div class="workflow-copy">
+                    <p class="eyebrow reveal-item">Süreç</p>
+                    <h2 class="section-title reveal-item">Proje akışını anlaşılır ve şeffaf bir sistemle ilerletiyoruz.</h2>
+                    <p class="section-text reveal-item">
+                        İyi bir sonuç için karmaşık görünmeye gerek yok. Süreç ne kadar netse, proje o kadar hızlı ve kontrollü ilerler.
+                    </p>
+                </div>
+
+                <div class="timeline">
+                    <article class="timeline-item reveal-item">
+                        <span class="timeline-step">01</span>
+                        <div>
+                            <h3>Analiz ve hedef belirleme</h3>
+                            <p>Markanın mevcut durumu, hedef kitlesi, rakip alanı ve istenen algı tanımlanır.</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal-item">
+                        <span class="timeline-step">02</span>
+                        <div>
+                            <h3>Görsel dil ve yapı kurgusu</h3>
+                            <p>Renk paleti, başlık düzeni, içerik blokları ve sayfa akışı tasarlanır.</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal-item">
+                        <span class="timeline-step">03</span>
+                        <div>
+                            <h3>Altyapı ve yayın hazırlığı</h3>
+                            <p>Hosting yaklaşımı, domain yapısı ve temel SEO bileşenleri projeye entegre edilir.</p>
+                        </div>
+                    </article>
+
+                    <article class="timeline-item reveal-item">
+                        <span class="timeline-step">04</span>
+                        <div>
+                            <h3>İçerik, blog ve final düzenleme</h3>
+                            <p>Bilgilendirici içerikler, KVKK metni ve iletişim blokları ile site tamamlanır.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section showcase">
+            <div class="container">
+                <div class="section-heading section-heading--compact">
+                    <div>
+                        <p class="eyebrow reveal-item">Hazırlanan yapı</p>
+                        <h2 class="section-title reveal-item">Sade referansı, çok daha güçlü bir sunuma dönüştüren ek katmanlar.</h2>
+                    </div>
+                </div>
+
+                <div class="showcase-grid">
+                    <article class="showcase-card reveal-item tilt-card">
+                        <div class="showcase-number">A1</div>
+                        <span class="showcase-tag">Animasyonlu Hero</span>
+                        <h3>Büyük başlık, parallax sahne ve hareketli tipografi ile daha güçlü açılış.</h3>
+                        <p>İlk ekranda premium algıyı artırmak için daha büyük, daha katmanlı ve daha dramatik bir giriş tasarlandı.</p>
+                    </article>
+
+                    <article class="showcase-card reveal-item tilt-card">
+                        <div class="showcase-number">B2</div>
+                        <span class="showcase-tag">Detaylı İçerik</span>
+                        <h3>Hizmetler, süreç, blog ve KVKK bölümleriyle daha güven veren yapı.</h3>
+                        <p>Ziyaretçi yalnızca görsel değil, bilgi ve güven açısından da doyurucu bir deneyim yaşar.</p>
+                    </article>
+
+                    <article class="showcase-card reveal-item tilt-card">
+                        <div class="showcase-number">C3</div>
+                        <span class="showcase-tag">Çalışan Etkileşimler</span>
+                        <h3>Harici kütüphane bağımlılığı olmadan çalışan native animasyon sistemi.</h3>
+                        <p>Scroll reveal, sayaç, cursor, canvas ve hover etkileri doğrudan site içine işlendi.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section blog">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow reveal-item">Blog</p>
+                        <h2 class="section-title reveal-item">Temel dijital kavramları sade, anlaşılır ve kurumsal dille anlattık.</h2>
+                    </div>
+                    <p class="section-text reveal-item">
+                        Aşağıdaki içerikler; potansiyel müşteriye güven vermek, sitenin bilgi değerini artırmak ve SEO açısından
+                        daha güçlü bir içerik zemini hazırlamak için oluşturuldu.
+                    </p>
+                </div>
+
+                <div class="blog-grid">
+                    <article class="blog-card reveal-item tilt-card">
+                        <div class="blog-meta">
+                            <span>01</span>
+                            <span>SEO</span>
+                        </div>
+                        <h3>SEO Nedir?</h3>
+                        <p>
+                            SEO, yani arama motoru optimizasyonu; bir web sitesinin Google gibi arama motorlarında daha görünür
+                            olabilmesi için yapılan teknik ve içerik odaklı düzenlemelerin tamamıdır.
+                        </p>
+                        <p>
+                            Sadece anahtar kelime eklemekten ibaret değildir. Sayfa hızı, başlık yapıları, içerik kalitesi,
+                            mobil uyumluluk, bağlantı kurgusu ve kullanıcı deneyimi de SEO'nun önemli parçalarıdır.
+                        </p>
+                        <ul>
+                            <li>Daha fazla organik görünürlük sağlar.</li>
+                            <li>Doğru hedef kitleye ulaşmayı kolaylaştırır.</li>
+                            <li>Uzun vadeli dijital büyüme için güçlü temel sunar.</li>
+                        </ul>
+                    </article>
+
+                    <article class="blog-card reveal-item tilt-card">
+                        <div class="blog-meta">
+                            <span>02</span>
+                            <span>Hosting</span>
+                        </div>
+                        <h3>Hosting Nedir?</h3>
+                        <p>
+                            Hosting, web sitenizin dosyalarının internette yayınlanmasını sağlayan sunucu hizmetidir. Bir sitenin
+                            hızlı açılması, stabil çalışması ve erişilebilir olması hosting kalitesi ile doğrudan ilişkilidir.
+                        </p>
+                        <p>
+                            Kötü bir hosting altyapısı; yavaş açılış süreleri, kopmalar ve güven sorunları oluşturabilir. Bu da
+                            hem ziyaretçi deneyimini hem de SEO performansını olumsuz etkiler.
+                        </p>
+                        <ul>
+                            <li>Site hızını ve erişilebilirliği etkiler.</li>
+                            <li>Yedekleme ve güvenlik tarafında kritiktir.</li>
+                            <li>Profesyonel marka algısı için güçlü altyapı gerekir.</li>
+                        </ul>
+                    </article>
+
+                    <article class="blog-card reveal-item tilt-card">
+                        <div class="blog-meta">
+                            <span>03</span>
+                            <span>Domain</span>
+                        </div>
+                        <h3>Domain Nedir?</h3>
+                        <p>
+                            Domain, bir web sitesinin internetteki adıdır. Kullanıcıların sitenize ulaşmak için tarayıcıya yazdığı
+                            alan adı, dijital markanızın en temel görünen unsurlarından biridir.
+                        </p>
+                        <p>
+                            Doğru seçilmiş bir domain adı; markanın akılda kalıcılığını artırır, güven oluşturur ve profesyonel
+                            görünümü destekler. Kısa, net ve markayla uyumlu isimler genellikle daha güçlü sonuç verir.
+                        </p>
+                        <ul>
+                            <li>Marka tanınırlığını destekler.</li>
+                            <li>Kurumsal güven hissini artırır.</li>
+                            <li>Dijital kimliğin temel başlangıç noktasıdır.</li>
+                        </ul>
+                    </article>
+
+                    <article class="blog-card reveal-item tilt-card">
+                        <div class="blog-meta">
+                            <span>04</span>
+                            <span>Marka</span>
+                        </div>
+                        <h3>Marka Kimliği Nedir?</h3>
+                        <p>
+                            Marka kimliği; logo, renk paleti, tipografi, görsel üslup ve iletişim tonunun bir araya gelerek
+                            oluşturduğu bütünsel marka görünümüdür. Bir markanın dışarıda nasıl algılandığını güçlü biçimde etkiler.
+                        </p>
+                        <p>
+                            Tutarlı bir marka kimliği, ziyaretçide profesyonellik hissi yaratır ve markayı rakiplerinden ayırır.
+                            Web sitesi tasarımı da bu kimliğin dijitalde en görünür yüzlerinden biridir.
+                        </p>
+                        <ul>
+                            <li>Markayı daha ayırt edilebilir hale getirir.</li>
+                            <li>Profesyonel ve güvenilir görünüm sunar.</li>
+                            <li>Tüm dijital kanallarda bütünlük oluşturur.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section faq">
+            <div class="container">
+                <div class="section-heading section-heading--compact">
+                    <div>
+                        <p class="eyebrow reveal-item">Sık Sorulanlar</p>
+                        <h2 class="section-title reveal-item">Kurumsal bir site kurmadan önce en çok merak edilen başlıklar.</h2>
+                    </div>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item reveal-item">
+                        <summary>Web sitesi ile birlikte SEO çalışması neden düşünülmeli?</summary>
+                        <p>Çünkü iyi görünen bir site tek başına yeterli değildir. Arama motorlarında görünür olmak için içerik ve teknik yapı baştan doğru kurulmalıdır.</p>
+                    </details>
+                    <details class="faq-item reveal-item">
+                        <summary>Domain ve hosting seçiminde nelere dikkat edilmeli?</summary>
+                        <p>Alan adının kısa, net ve marka ile uyumlu olması; hostingin ise hızlı, güvenli ve sürdürülebilir olması gerekir.</p>
+                    </details>
+                    <details class="faq-item reveal-item">
+                        <summary>Marka kimliği neden yalnızca logodan ibaret değildir?</summary>
+                        <p>Çünkü marka algısı sadece sembolle kurulmaz. Renk, tipografi, dil tonu, görsel tutarlılık ve sunum biçimi bütünün parçasıdır.</p>
+                    </details>
+                    <details class="faq-item reveal-item">
+                        <summary>Bu yeni sitedeki animasyonlar neden daha stabil çalışır?</summary>
+                        <p>Çünkü animasyon sistemi harici CDN kütüphanelerine bağlı olmadan doğrudan CSS ve JavaScript ile kurgulandı. Böylece yerelde de güvenilir biçimde çalışır.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section id="kvkk" class="section kvkk">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow reveal-item">KVKK</p>
+                        <h2 class="section-title reveal-item">Kişisel verilerin korunmasına ilişkin aydınlatma metni.</h2>
+                    </div>
+                    <p class="section-text reveal-item">
+                        Aşağıdaki metin, iletişim süreçleri için genel bir bilgilendirme amacıyla hazırlanmıştır. Şirket içi süreçlerinize
+                        göre bir hukuk danışmanı tarafından ayrıca gözden geçirilmesi önerilir.
+                    </p>
+                </div>
+
+                <div class="kvkk-panel reveal-item">
+                    <p>
+                        Veri sorumlusu sıfatıyla Roll Agency, bizimle e-posta, sosyal medya veya internet sitesi üzerinden iletişime
+                        geçtiğinizde paylaştığınız ad, soyad, e-posta adresi, telefon bilgisi, proje detayı ve mesaj içeriği gibi
+                        kişisel verilerinizi; talebinizi değerlendirmek, sizinle iletişim kurmak, teklif sürecini yürütmek ve hizmet
+                        bilgilendirmesi yapmak amacıyla işleyebilir.
+                    </p>
+                    <p>
+                        Kişisel verileriniz, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun 5. maddesinde yer alan hukuki sebeplere
+                        dayanılarak, iletişim talebinin yerine getirilmesi, meşru menfaatlerin korunması ve gerekli durumlarda açık rıza
+                        çerçevesinde işlenebilir. Verileriniz, yalnızca işin gerektirdiği ölçüde sınırlı olarak ve gerektiğinde hizmet
+                        alınan teknik altyapı sağlayıcıları ile paylaşılabilir.
+                    </p>
+                    <p>
+                        İlgili kişi olarak KVKK'nın 11. maddesi kapsamında; kişisel verilerinizin işlenip işlenmediğini öğrenme,
+                        işlenmişse buna ilişkin bilgi talep etme, amaca uygun kullanılıp kullanılmadığını öğrenme, eksik veya yanlış
+                        işlenmişse düzeltilmesini isteme, silinmesini veya yok edilmesini talep etme ve itiraz etme haklarına sahipsiniz.
+                    </p>
+                    <p>
+                        Başvuru ve bilgi taleplerinizi <a href="mailto:info@rolllagency.sbs">info@rolllagency.sbs</a> adresine iletebilirsiniz.
+                        Talebiniz, niteliğine göre mümkün olan en kısa sürede ve en geç yasal süreler içinde değerlendirilir.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="iletisim" class="section contact">
+            <div class="container contact-panel reveal-item">
+                <div class="contact-copy">
+                    <p class="eyebrow">İletişim</p>
+                    <h2 class="section-title">Bir sonraki projenizi daha güçlü, daha kurumsal ve daha dikkat çekici hale getirelim.</h2>
+                    <p class="section-text">
+                        Tasarım, marka sunumu, SEO başlangıcı, hosting planlaması ve domain kurgusu için doğrudan bizimle iletişime geçebilirsiniz.
+                    </p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="mailto:info@rolllagency.sbs" class="button button--solid magnetic">info@rolllagency.sbs</a>
+                    <a href="https://www.instagram.com/rolllagency/" target="_blank" rel="noreferrer" class="button button--outline magnetic">@rolllagency</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img src="roll-logo.png" alt="Roll Agency logosu" class="footer-logo">
+                <p>Web tasarım, marka kimliği, SEO temeli, hosting ve domain planlaması.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#hizmetler">Hizmetler</a>
+                <a href="#blog">Blog</a>
+                <a href="#kvkk">KVKK</a>
+                <a href="#iletisim">İletişim</a>
+            </div>
+            <div class="footer-contact">
+                <a href="mailto:info@rolllagency.sbs">info@rolllagency.sbs</a>
+                <a href="https://www.instagram.com/rolllagency/" target="_blank" rel="noreferrer">@rolllagency</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>All Rights Reversed 2026</p>
+        </div>
+    </footer>
+</body>
+</html>
