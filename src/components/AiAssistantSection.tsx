@@ -4,21 +4,21 @@ import { useReveal } from "./useReveal";
 
 const points = [
   {
-    title: "Aninda On Yanit",
+    title: "Anında Ön Yanıt",
     description:
-      "Ziyaretciler temel sorularina saniyeler icinde cevap alir ve iletisim sureci hizlanir.",
+      "Ziyaretçiler temel sorularına saniyeler içinde cevap alır ve iletişim süreci hızlanır.",
     icon: MessageCircle,
   },
   {
     title: "Markaya Uyumlu Ton",
     description:
-      "Asistan arayuzu Rolll Agency renkleri ve mevcut tasarim diliyle tamamen uyumlu calisir.",
+      "Asistan arayüzü Rolll Agency renkleri ve mevcut tasarım diliyle tamamen uyumlu çalışır.",
     icon: Bot,
   },
   {
-    title: "Webhook Hazir Altyapi",
+    title: "Detaylı Bilgi Odaklı",
     description:
-      "Bir sonraki adimda tek endpoint ile gercek AI yanitlarini bu kutuya baglayabiliriz.",
+      "AI hizmeti sunmuyoruz; detaylı bilgi almak için asistanla konuşabilirsiniz.",
     icon: Webhook,
   },
 ];
@@ -32,14 +32,14 @@ const AiAssistantSection = () => {
       <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[0.95fr_1.05fr] gap-10 items-center">
         <div>
           <span className="reveal animate-fade-up inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 text-primary text-sm font-medium mb-4">
-            AI Entegrasyonu
+            Bilgilendirme Asistanı
           </span>
           <h2 className="reveal animate-fade-up stagger-1 font-heading text-3xl md:text-5xl font-bold mb-6">
-            Sitenize Ozel <span className="text-gradient">AI Asistan</span>
+            Detaylı Bilgi İçin <span className="text-gradient">AI Asistan</span>
           </h2>
           <p className="reveal animate-fade-up stagger-2 text-foreground/65 text-lg max-w-xl mb-8">
-            Bu alan, ziyaretcilerinizin sorularini toplayip yonlendirecek sekilde hazirlandi.
-            Simdilik demo yanitlar var; sonraki adimda webhook ile canli modele baglayacagiz.
+            Bu bölüm yalnızca bilgilendirme amaçlıdır. AI hizmeti sunmuyoruz; teklif, süreç ve
+            hizmet detayları için AI asistanımızla konuşabilirsiniz.
           </p>
 
           <div className="space-y-4">
