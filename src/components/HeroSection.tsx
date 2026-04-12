@@ -1,5 +1,4 @@
 import { AnimatedHero } from "@/components/ui/animated-hero";
-import logo from "@/assets/logo.png";
 
 const HeroSection = () => {
   return (
@@ -21,7 +20,6 @@ const HeroSection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-primary/5" />
 
       <div className="relative z-10 flex flex-col items-center px-6">
-        <img src={logo} alt="Rolll Agency" className="h-20 md:h-24 mb-4" />
         <AnimatedHero />
       </div>
 

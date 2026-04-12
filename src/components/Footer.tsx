@@ -5,7 +5,7 @@ const Footer = () => (
     <div className="max-w-6xl mx-auto">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         <div className="flex flex-col items-center md:items-start gap-4">
-          <img src={logo} alt="Rolll Agency" className="h-10" />
+          <img src={logo} alt="Rolll Agency" className="h-12 md:h-14" />
           <p className="font-body text-foreground/50 text-sm max-w-xs text-center md:text-left">
             Yaratıcı tasarım ve dijital çözümlerle başarıyı birlikte inşa ediyoruz.
           </p>

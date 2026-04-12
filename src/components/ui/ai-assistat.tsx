@@ -36,7 +36,7 @@ const fallbackResponse = (userMessage: string) => {
 };
 
 const AiAssistat = ({
-  placeholder = "Mesajini yaz...",
+  placeholder = "Mesajını yaz...",
   className,
   onSendMessage,
 }: AiAssistatProps) => {
@@ -165,7 +165,7 @@ const AiAssistat = ({
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
             placeholder={placeholder}
-            className="w-full bg-background/80 border border-border rounded-full py-3 pl-4 pr-12 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring/80"
+            className="w-full font-body bg-background/80 border border-border rounded-full py-3 pl-4 pr-12 text-foreground placeholder:text-foreground/50 focus:outline-none focus:ring-2 focus:ring-ring/80"
           />
           <button
             type="submit"

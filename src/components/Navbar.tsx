@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -27,14 +28,17 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-1.5 md:py-2 flex items-center justify-end">
+      <div className="max-w-7xl mx-auto px-6 py-2.5 md:py-3.5 flex items-center justify-between">
+        <a href="#hero" className="shrink-0">
+          <img src={logo} alt="Rolll Agency" className="h-12 md:h-14 w-auto" />
+        </a>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-7">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-foreground/70 hover:text-primary transition-colors duration-300 text-xs md:text-sm font-body font-medium tracking-wide"
+              className="text-foreground/70 hover:text-primary transition-colors duration-300 text-sm font-body font-medium tracking-wide"
             >
               {link.label}
             </a>
