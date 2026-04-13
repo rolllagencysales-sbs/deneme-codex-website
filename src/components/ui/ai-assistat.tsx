@@ -65,6 +65,11 @@ const AiAssistat = ({
     setIsTyping(true);
 
     try {
+      if (onSendMessage) {
+        // Webhook hattının cevap üretmesi için kısa bir bekleme süresi.
+        await new Promise((resolve) => setTimeout(resolve, 5000));
+      }
+
       const response = onSendMessage
         ? await onSendMessage(userMessage, updatedHistory)
         : fallbackResponse(userMessage);
