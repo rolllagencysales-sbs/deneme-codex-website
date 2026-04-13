@@ -15,7 +15,6 @@ const Navbar = () => {
     { label: "Ana Sayfa", href: "#hero" },
     { label: "Hakkımızda", href: "#about" },
     { label: "Hizmetler", href: "#services" },
-    { label: "AI Asistan", href: "#ai-assistant" },
     { label: "Misyon", href: "#mission" },
     { label: "İletişim", href: "#contact" },
   ];
