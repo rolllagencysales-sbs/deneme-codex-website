@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useRef, useState } from "react";
+﻿import { FormEvent, useEffect, useRef, useState } from "react";
 import { Loader2, Send, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -13,26 +13,32 @@ type AiAssistatProps = {
   onSendMessage?: (userMessage: string, history: ChatMessage[]) => Promise<string> | string;
 };
 
+const quickPrompts = [
+  "Marka kimliği süreciniz nasıl ilerliyor?",
+  "Web sitesi teslim süreniz ortalama ne kadar?",
+  "Hangi hizmet paketleri bizim için uygun olur?",
+];
+
 const fallbackResponse = (userMessage: string) => {
   const normalized = userMessage.toLowerCase();
 
   if (normalized.includes("hello") || normalized.includes("hi") || normalized.includes("selam")) {
-    return "Merhaba. Rolll AI asistan buradayim, nasil destek olayim?";
+    return "Merhaba. Rolll AI asistanı buradayım, nasıl destek olayım?";
   }
 
-  if (normalized.includes("help") || normalized.includes("yardim")) {
-    return "Web sitesi, icerik, tasarim ve teknik konularda sorularina yardimci olabilirim.";
+  if (normalized.includes("help") || normalized.includes("yardım")) {
+    return "Web sitesi, içerik, tasarım ve teknik konularda sorularına yardımcı olabilirim.";
   }
 
-  if (normalized.includes("thank") || normalized.includes("tesekkur")) {
-    return "Rica ederim. Istersen bir sonraki adimi birlikte planlayabiliriz.";
+  if (normalized.includes("thank") || normalized.includes("teşekkür")) {
+    return "Rica ederim. İstersen bir sonraki adımı birlikte planlayabiliriz.";
   }
 
   if (normalized.includes("who are you") || normalized.includes("kimsin")) {
-    return "Ben Rolll Agency sitesindeki AI asistanim. Hizli ve net cevaplar icin buradayim.";
+    return "Ben Rolll Agency sitesindeki AI asistanıyım. Hızlı ve net cevaplar için buradayım.";
   }
 
-  return "Mesajini aldim. Istersen bunu webhook baglantisiyla gercek AI cevabina cevirebiliriz.";
+  return "Mesajını aldım. İstersen bunu webhook bağlantısıyla gerçek AI cevabına çevirebiliriz.";
 };
 
 const AiAssistat = ({
@@ -65,15 +71,15 @@ const AiAssistat = ({
       const responseText =
         typeof response === "string" && response.trim()
           ? response
-          : "Mesajini aldim. Webhook baglantisi hazir olunca daha kapsamli cevap verecegim.";
+          : "Mesajını aldım. Webhook bağlantısı hazır olunca daha kapsamlı cevap vereceğim.";
 
       await new Promise((resolve) => setTimeout(resolve, onSendMessage ? 300 : 1100));
       setMessages((prev) => [...prev, { text: responseText, isUser: false }]);
     } catch (error) {
       const errorMessage =
         error instanceof Error && error.message
-          ? `Webhook hatasi: ${error.message}`
-          : "Su anda yanit uretemiyorum. Birazdan tekrar deneyebilirsin.";
+          ? `Webhook hatası: ${error.message}`
+          : "Şu anda yanıt üretemiyorum. Birazdan tekrar deneyebilirsin.";
       setMessages((prev) => [
         ...prev,
         {
@@ -93,18 +99,35 @@ const AiAssistat = ({
   return (
     <div
       className={cn(
-        "w-full max-w-xl mx-auto h-[560px] md:h-[600px] rounded-2xl overflow-hidden flex flex-col",
+        "w-full max-w-2xl mx-auto h-[580px] md:h-[620px] rounded-2xl overflow-hidden flex flex-col relative",
         "border border-primary/25 shadow-[var(--shadow-card)]",
         "bg-gradient-to-br from-background via-secondary/80 to-background",
         className,
       )}
     >
-      <div className="p-4 flex-1 overflow-y-auto bg-background/60">
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_10%,hsl(var(--primary)/0.15),transparent_35%)]" />
+
+      <div className="p-4 flex-1 overflow-y-auto bg-background/55 relative z-10">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-center px-4">
             <Sparkles className="h-11 w-11 text-primary mb-4" />
-            <h3 className="text-foreground text-xl mb-2">Rolll AI asistanina hos geldin</h3>
-            <p className="text-foreground/60 text-sm max-w-sm">Hedefin, hizmetin veya web projenle ilgili bir soru sor.</p>
+            <h3 className="text-foreground text-2xl font-heading mb-2">Bize ulaşın, AI asistanımızdan bilgi alın</h3>
+            <p className="text-foreground/65 text-sm max-w-sm mb-5 font-body">
+              Hedefin, hizmetin veya web projenle ilgili bir soru sor.
+            </p>
+
+            <div className="w-full max-w-md flex flex-col gap-2">
+              {quickPrompts.map((prompt) => (
+                <button
+                  key={prompt}
+                  type="button"
+                  onClick={() => setInput(prompt)}
+                  className="text-left text-sm font-body px-3 py-2 rounded-lg border border-border bg-card/70 hover:border-primary/40 hover:text-primary transition-colors"
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
           </div>
         ) : (
           <div className="space-y-4">
@@ -122,7 +145,7 @@ const AiAssistat = ({
                       : "bg-card text-card-foreground rounded-tl-none border border-border",
                   )}
                 >
-                  <p className="text-sm leading-relaxed">{msg.text}</p>
+                  <p className="text-sm leading-relaxed font-body">{msg.text}</p>
                 </div>
               </div>
             ))}
@@ -153,8 +176,8 @@ const AiAssistat = ({
       <form
         onSubmit={handleSubmit}
         className={cn(
-          "p-4 border-t transition-colors duration-200",
-          isFocused ? "border-primary/60 bg-card/60" : "border-border bg-card/30",
+          "p-4 border-t transition-colors duration-200 relative z-10",
+          isFocused ? "border-primary/60 bg-card/70" : "border-border bg-card/35",
         )}
       >
         <div className="relative flex items-center">
@@ -176,7 +199,7 @@ const AiAssistat = ({
                 ? "text-foreground/40 bg-secondary cursor-not-allowed"
                 : "text-primary-foreground bg-primary hover:bg-primary/90",
             )}
-            aria-label="Mesaj gonder"
+            aria-label="Mesaj gönder"
           >
             {isTyping ? <Loader2 className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
           </button>

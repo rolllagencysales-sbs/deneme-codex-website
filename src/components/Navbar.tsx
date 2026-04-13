@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
 
 const Navbar = () => {
@@ -28,9 +28,9 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-2.5 md:py-3.5 flex items-center justify-between">
+      <div className="max-w-[88rem] mx-auto px-6 md:px-8 py-3 md:py-4 flex items-center justify-between">
         <a href="#hero" className="shrink-0">
-          <img src={logo} alt="Rolll Agency" className="h-12 md:h-14 w-auto" />
+          <img src={logo} alt="Rolll Agency" className="h-16 md:h-20 w-auto" />
         </a>
 
         <div className="hidden md:flex items-center gap-7">
