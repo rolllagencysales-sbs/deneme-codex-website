@@ -13,7 +13,8 @@ type PaymentFormState = {
 };
 
 type PaymentApiResponse = {
-  redirectUrl?: string;
+  actionUrl?: string;
+  fields?: Record<string, string | number>;
   message?: string;
 };
 
@@ -34,6 +35,27 @@ const PaymentSection = () => {
 
   const onFieldChange = (field: keyof PaymentFormState, value: string) => {
     setForm((current) => ({ ...current, [field]: value }));
+  };
+
+  const submitShopierForm = (
+    actionUrl: string,
+    fields: Record<string, string | number>,
+  ) => {
+    const postForm = document.createElement("form");
+    postForm.method = "POST";
+    postForm.action = actionUrl;
+    postForm.style.display = "none";
+
+    Object.entries(fields).forEach(([key, value]) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = key;
+      input.value = String(value);
+      postForm.appendChild(input);
+    });
+
+    document.body.appendChild(postForm);
+    postForm.submit();
   };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -74,11 +96,19 @@ const PaymentSection = () => {
         data = null;
       }
 
-      if (!response.ok || !data?.redirectUrl) {
-        throw new Error(data?.message ?? "Odeme baglantisi olusturulamadi.");
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error("API endpoint bulunamadi. /api/pay deploy edilmemis olabilir.");
+        }
+
+        throw new Error(data?.message ?? `Odeme olusturulamadi (HTTP ${response.status}).`);
       }
 
-      window.location.href = data.redirectUrl;
+      if (!data?.actionUrl || !data.fields) {
+        throw new Error("Shopier yonlendirme verisi alinamadi.");
+      }
+
+      submitShopierForm(data.actionUrl, data.fields);
     } catch (error) {
       const fallbackMessage = "Odeme baslatilirken bir hata olustu.";
       const errorText = error instanceof Error ? error.message : fallbackMessage;

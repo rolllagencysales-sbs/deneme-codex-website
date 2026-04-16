@@ -9,8 +9,9 @@ Bu projeye fiyat girilerek odeme baslatilabilen bir alan eklendi.
 ```env
 SHOPIER_API_KEY=your_api_key
 SHOPIER_API_SECRET=your_api_secret
-SHOPIER_API_URL=https://api.shopier.com/payment
 SHOPIER_WEBSITE_INDEX=1
+SHOPIER_CURRENCY=0
+SHOPIER_PRODUCT_TYPE=1
 SHOPIER_SUCCESS_URL=https://rolllagency.com.tr/odeme/basarili
 SHOPIER_FAIL_URL=https://rolllagency.com.tr/odeme/basarisiz
 PORT=3000
@@ -29,3 +30,8 @@ npm run dev
 ```
 
 Ardindan `http://localhost:8080` uzerinden siteye gidip `Odeme` bolumunde fiyat girerek odeme baslatabilirsin.
+
+## Vercel Notu
+
+`/api/pay` icin `api/pay.js` dosyasi serverless function olarak eklendi.
+Vercel dashboard -> Settings -> Environment Variables altina yukaridaki `SHOPIER_*` degiskenlerini girip yeniden deploy et.
