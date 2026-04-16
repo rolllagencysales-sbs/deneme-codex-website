@@ -11,9 +11,24 @@ const normalizeString = (value, fallback) => {
   return trimmed.length > 0 ? trimmed : fallback;
 };
 
+const normalizeEnvString = (value, fallback = "") => {
+  if (typeof value !== "string") {
+    return fallback;
+  }
+
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : fallback;
+};
+
 const normalizeAmount = (value) => {
   const amount = Number.parseFloat(String(value ?? "").replace(",", "."));
   return Number.isFinite(amount) ? amount : NaN;
+};
+
+const numericOnly = (value, fallback) => {
+  const source = String(value ?? "");
+  const cleaned = source.replace(/\D/g, "");
+  return cleaned.length > 0 ? cleaned : fallback;
 };
 
 const createHttpError = (statusCode, message) => {
@@ -23,8 +38,8 @@ const createHttpError = (statusCode, message) => {
 };
 
 export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
-  const apiKey = env.SHOPIER_API_KEY;
-  const apiSecret = env.SHOPIER_API_SECRET;
+  const apiKey = normalizeEnvString(env.SHOPIER_API_KEY);
+  const apiSecret = normalizeEnvString(env.SHOPIER_API_SECRET);
 
   if (!apiKey || !apiSecret) {
     throw createHttpError(
@@ -39,14 +54,9 @@ export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
   }
 
   const buyer = body.buyer ?? {};
-  const buyerId = normalizeString(
-    buyer.id,
-    Math.floor(Date.now() / 1000).toString(),
-  );
-  const orderId = normalizeString(
-    body.orderId,
-    `order-${Date.now()}-${Math.floor(Math.random() * 9000 + 1000)}`,
-  );
+  const numericSeed = Date.now().toString();
+  const buyerId = numericOnly(buyer.id, numericSeed);
+  const orderId = numericOnly(body.orderId, numericSeed);
   const totalOrderValue = Number(amount.toFixed(2)).toString();
   const currency = Number(env.SHOPIER_CURRENCY ?? 0);
   const randomNr = Math.floor(Math.random() * 900000 + 100000).toString();
@@ -61,7 +71,7 @@ export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
     website_index: Number(env.SHOPIER_WEBSITE_INDEX ?? 1),
     platform_order_id: orderId,
     product_name: normalizeString(body.productName, "Hizmet"),
-    product_type: Number(env.SHOPIER_PRODUCT_TYPE ?? 1),
+    product_type: Number(env.SHOPIER_PRODUCT_TYPE ?? 0),
     buyer_name: normalizeString(buyer.name, "Musteri"),
     buyer_surname: normalizeString(buyer.surname, "Adi"),
     buyer_email: normalizeString(buyer.email, "musteri@example.com"),
@@ -98,12 +108,17 @@ export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
     signature,
   };
 
-  if (env.SHOPIER_SUCCESS_URL) {
-    fields.success_url = env.SHOPIER_SUCCESS_URL;
+  const includeReturnUrls = normalizeEnvString(
+    env.SHOPIER_INCLUDE_RETURN_URLS,
+    "0",
+  );
+
+  if (includeReturnUrls === "1" && normalizeEnvString(env.SHOPIER_SUCCESS_URL)) {
+    fields.success_url = normalizeEnvString(env.SHOPIER_SUCCESS_URL);
   }
 
-  if (env.SHOPIER_FAIL_URL) {
-    fields.fail_url = env.SHOPIER_FAIL_URL;
+  if (includeReturnUrls === "1" && normalizeEnvString(env.SHOPIER_FAIL_URL)) {
+    fields.fail_url = normalizeEnvString(env.SHOPIER_FAIL_URL);
   }
 
   return {
