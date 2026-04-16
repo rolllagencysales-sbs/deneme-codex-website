@@ -20,6 +20,18 @@ const parseRequestBody = (body) => {
   return {};
 };
 
+const resolveBaseUrl = (req) => {
+  const protocolHeader = String(req.headers["x-forwarded-proto"] || "https");
+  const protocol = protocolHeader.split(",")[0].trim();
+  const host = String(req.headers["x-forwarded-host"] || req.headers.host || "").trim();
+
+  if (!host) {
+    return "";
+  }
+
+  return `${protocol}://${host}`;
+};
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
@@ -28,7 +40,9 @@ export default async function handler(req, res) {
 
   try {
     const body = parseRequestBody(req.body);
-    const paymentData = buildShopierPaymentPayload(body, process.env);
+    const baseUrl = resolveBaseUrl(req);
+    const callbackUrl = process.env.SHOPIER_CALLBACK_URL || (baseUrl ? `${baseUrl}/api/shopier-callback` : "");
+    const paymentData = buildShopierPaymentPayload(body, process.env, { callbackUrl });
     return res.status(200).json(paymentData);
   } catch (error) {
     const statusCode = Number(error.statusCode ?? 500);

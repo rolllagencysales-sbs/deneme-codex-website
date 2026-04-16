@@ -9,10 +9,13 @@ Bu projeye fiyat girilerek odeme baslatilabilen bir alan eklendi.
 ```env
 SHOPIER_API_KEY=your_api_key
 SHOPIER_API_SECRET=your_api_secret
+SHOPIER_CLIENT_ID=
+SHOPIER_CLIENT_SECRET=
 SHOPIER_WEBSITE_INDEX=1
 SHOPIER_CURRENCY=0
 SHOPIER_PRODUCT_TYPE=0
 SHOPIER_INCLUDE_RETURN_URLS=0
+SHOPIER_CALLBACK_URL=https://rolllagency.com.tr/api/shopier-callback
 SHOPIER_SUCCESS_URL=https://rolllagency.com.tr/odeme/basarili
 SHOPIER_FAIL_URL=https://rolllagency.com.tr/odeme/basarisiz
 PORT=3000
@@ -35,4 +38,9 @@ Ardindan `http://localhost:8080` uzerinden siteye gidip `Odeme` bolumunde fiyat 
 ## Vercel Notu
 
 `/api/pay` icin `api/pay.js` dosyasi serverless function olarak eklendi.
+`/api/shopier-callback` endpointi de eklendi.
 Vercel dashboard -> Settings -> Environment Variables altina yukaridaki `SHOPIER_*` degiskenlerini girip yeniden deploy et.
+
+Not:
+- Tercih edilen kimlik bilgisi `SHOPIER_API_KEY + SHOPIER_API_SECRET` kombinasyonudur.
+- Eger panelinde sadece `Client ID / Client Secret` goruyorsan, sistem fallback olarak bunlari da okuyacak sekilde ayarlandi.

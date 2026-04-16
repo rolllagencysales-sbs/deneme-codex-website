@@ -37,14 +37,20 @@ const createHttpError = (statusCode, message) => {
   return error;
 };
 
-export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
-  const apiKey = normalizeEnvString(env.SHOPIER_API_KEY);
-  const apiSecret = normalizeEnvString(env.SHOPIER_API_SECRET);
+export const buildShopierPaymentPayload = (
+  body = {},
+  env = process.env,
+  options = {},
+) => {
+  const apiKey = normalizeEnvString(env.SHOPIER_API_KEY || env.SHOPIER_CLIENT_ID);
+  const apiSecret = normalizeEnvString(
+    env.SHOPIER_API_SECRET || env.SHOPIER_CLIENT_SECRET,
+  );
 
   if (!apiKey || !apiSecret) {
     throw createHttpError(
       500,
-      "SHOPIER_API_KEY ve SHOPIER_API_SECRET tanimli olmali.",
+      "SHOPIER_API_KEY/SHOPIER_CLIENT_ID ve SHOPIER_API_SECRET/SHOPIER_CLIENT_SECRET tanimli olmali.",
     );
   }
 
@@ -107,6 +113,11 @@ export const buildShopierPaymentPayload = (body = {}, env = process.env) => {
     random_nr: randomNr,
     signature,
   };
+
+  const callbackUrl = normalizeEnvString(options.callbackUrl || env.SHOPIER_CALLBACK_URL);
+  if (callbackUrl) {
+    fields.callback = callbackUrl;
+  }
 
   const includeReturnUrls = normalizeEnvString(
     env.SHOPIER_INCLUDE_RETURN_URLS,
