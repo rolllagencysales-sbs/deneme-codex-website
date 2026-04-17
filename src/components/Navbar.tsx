@@ -16,7 +16,6 @@ const Navbar = () => {
     { label: "Hakkımızda", href: "#about" },
     { label: "Hizmetler", href: "#services" },
     { label: "Misyon", href: "#mission" },
-    { label: "Odeme", href: "#payment" },
     { label: "İletişim", href: "#contact" },
   ];
 
